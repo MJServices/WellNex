@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 247 248 250;
+    --foreground: 51 51 51;
+    --card: 255 255 255;
+    --card-foreground: 51 51 51;
+    --popover: 255 255 255;
+    --popover-foreground: 51 51 51;
+    --primary: 17 17 17;
+    --primary-foreground: 247 248 250;
+    --secondary: 241 245 249;
+    --secondary-foreground: 15 23 42;
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
+    --accent: 241 245 249;
+    --accent-foreground: 15 23 42;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 148 163 184;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 11 11 12;
+    --foreground: 184 184 184;
+    --card: 24 24 27;
+    --card-foreground: 250 250 250;
+    --popover: 24 24 27;
+    --popover-foreground: 250 250 250;
+    --primary: 250 250 250;
+    --primary-foreground: 9 9 11;
+    --secondary: 39 39 42;
+    --secondary-foreground: 250 250 250;
+    --muted: 39 39 42;
+    --muted-foreground: 161 161 170;
+    --accent: 39 39 42;
+    --accent-foreground: 250 250 250;
+    --destructive: 127 29 29;
+    --destructive-foreground: 250 250 250;
+    --border: 39 39 42;
+    --input: 39 39 42;
+    --ring: 212 212 216;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass-light {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-dark {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 20px rgba(255, 77, 0, 0.3), 0 0 40px rgba(255, 77, 0, 0.1);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 246, 255, 0.3), 0 0 40px rgba(0, 246, 255, 0.1);
+  }
+
+  .gradient-brand {
+    background: linear-gradient(135deg, #ff4d00 0%, #00f6ff 100%);
+  }
+
+  .transition-theme {
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  /* Hero Background Animations */
+  .fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .fade-in-subtitle {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  .explore-btn {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .explore-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-50%) translateY(-2px);
+  }
+
+  .explore-arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .explore-btn:hover .explore-arrow {
+    transform: translateY(2px);
+  }
+
+  .arrow-svg {
+    transition: transform 0.3s ease;
+  }
+
+  .explore-btn:hover .arrow-svg {
+    animation: bounce 1s infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-3px);
+    }
+    60% {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* Neon Red Glow for Headings */
+.neon-heading {
+  color: #ff0040;
+  text-shadow: 0 0 8px rgba(255, 0, 64, 0.4), 0 0 15px rgba(255, 0, 64, 0.3),
+    0 0 25px rgba(255, 0, 64, 0.2), 0 0 35px rgba(255, 0, 64, 0.15);
+  animation: neon-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+  from {
+    text-shadow: 0 0 8px rgba(255, 0, 64, 0.4), 0 0 15px rgba(255, 0, 64, 0.3),
+      0 0 25px rgba(255, 0, 64, 0.2), 0 0 35px rgba(255, 0, 64, 0.15);
+  }
+  to {
+    text-shadow: 0 0 12px rgba(255, 0, 64, 0.5), 0 0 20px rgba(255, 0, 64, 0.4),
+      0 0 30px rgba(255, 0, 64, 0.25), 0 0 45px rgba(255, 0, 64, 0.2);
+  }
+}
