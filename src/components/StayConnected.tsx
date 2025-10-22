@@ -3,7 +3,6 @@ import { useState, useRef } from "react";
 import {
   Mail,
   MessageSquare,
-  Send,
   Sparkles,
   ArrowRight,
   CheckCircle2,

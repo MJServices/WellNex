@@ -1,73 +1,110 @@
-# React + TypeScript + Vite
+# Wellnex Systems
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A unified digital ecosystem empowering individuals, gyms, and wellness providers through cutting-edge HealthTech and fitness innovation.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **SoulWhispers**: Mindfulness and emotional wellness app with AI-powered mood tracking
+- **GymKey**: Digital passport to fitness freedom with seamless gym access
+- **Interactive UI**: Stunning animations with GSAP, Framer Motion, and custom effects
+- **3D Gallery**: Immersive scroll-based image gallery with cloth physics
+- **Responsive Design**: Optimized for all devices and screen sizes
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 19 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion, GSAP
+- **3D Graphics**: Three.js, React Three Fiber
+- **Routing**: React Router DOM
+- **UI Components**: Radix UI, Custom Components
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Install dependencies
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Run development server
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Build for production
+npm run build
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🌐 Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Vercel (Recommended)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Push your code to GitHub
+2. Import project in Vercel
+3. Vercel will auto-detect Vite configuration
+4. Deploy!
+
+Or use Vercel CLI:
+
+```bash
+npm i -g vercel
+vercel
 ```
+
+### Manual Build
+
+```bash
+npm run build
+# Deploy the 'dist' folder to your hosting provider
+```
+
+## 🎨 Key Components
+
+- **MouseFollower**: Glass cursor effect with GSAP animations
+- **TargetCursor**: Corner bracket cursor for non-home pages
+- **VariableProximity**: Interactive text that responds to mouse proximity
+- **FlowingMenu**: Animated menu with cursor-following images
+- **InteractiveCard**: 3D tilt card with spotlight effect
+- **InfiniteGallery**: 3D scroll gallery with cloth physics
+
+## 📱 Pages
+
+- **Home**: Hero, FlowingMenu, WhyWellnex, 3D Gallery, ComingNext, UserReviews, StayConnected
+- **Apps**: SoulWhispers and GymKey showcase
+- **About**: Company timeline and vision
+- **Contact**: Interactive contact form
+
+## 🎯 Performance Optimizations
+
+- Lazy loading for heavy components
+- Optimized images with proper sizing
+- Hardware-accelerated animations
+- Code splitting with React Router
+- Efficient re-renders with React 19
+
+## 🔧 Configuration
+
+### Tailwind Config
+
+Custom colors, animations, and utilities configured in `tailwind.config.js`
+
+### Fonts
+
+- Montserrat (headings)
+- Raleway (headings)
+- Inter (body)
+- Playfair Display (accents)
+- Roboto Flex (variable text effects)
+
+## 📄 License
+
+© 2025 Wellnex Systems. All rights reserved.
+
+## 🤝 Contributing
+
+This is a private project. For inquiries, contact info@wellnexsystems.com
+
+---
+
+Made with ❤️ for wellness
